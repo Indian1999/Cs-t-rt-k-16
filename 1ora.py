@@ -40,4 +40,33 @@ say_time_hi_to(1, "András")
 say_time_hi_to(2, "Béla")
 say_time_hi_to(3, "Cecil")
 say_time_hi_to([8, 5, 3], "Dénes")
-        
+
+
+print(say_hi()) # None
+
+def g(x):
+    return 2 * x + 4
+
+i = -20
+while g(i) < 0:
+    i += 1
+print(f"Az első egész szám amire a g függvény nem negatív értéket ad a {i}.")
+   
+# Ha egy függvény return-höz ér akkor ott leáll teljesen
+def get_animal():
+    print("Ez a get_animal() függvény eleje")
+    return "Elephant"
+    print("Ez a get_animal() függvény vége") # <- Ez sose fut le
+    
+get_animal()
+
+# Írjunk egy függvényt ami meghatározza egy szám abszolút értékét! ( |-5| = 5,    |3| = 3 )
+
+def abs(x):
+    if x < 0:
+        return x * -1
+    return x
+
+print(abs(-7))
+print(abs(-7.16))
+print(abs(10))
