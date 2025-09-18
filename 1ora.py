@@ -11,5 +11,33 @@ def say_hi():
     print("Szia!")
     
 say_hi()
-say_hi()
-say_hi()
+
+def say_hi_to(name): # name - függvény Paraméter
+    print(f"Szia {name}!")
+    
+say_hi_to("András") # András - argumentum
+say_hi_to("Béla")
+say_hi_to("Cecil")
+
+def f(x): # f(x) = 3x - 2
+    print(f"f({x}) = {3*x - 2}")
+    
+f(0)
+f(1)
+f(2)
+
+def say_time_hi_to(time, name):
+    if time == 1:
+        print(f"Jó reggelt {name}!")
+    elif time == 2:
+        print(f"Jó napot {name}!")
+    elif time == 3:
+        print(f"Jó estét {name}!")
+    else:
+        print(f"Szia {name}!")
+        
+say_time_hi_to(1, "András")
+say_time_hi_to(2, "Béla")
+say_time_hi_to(3, "Cecil")
+say_time_hi_to([8, 5, 3], "Dénes")
+        
