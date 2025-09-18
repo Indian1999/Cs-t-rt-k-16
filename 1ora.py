@@ -70,3 +70,39 @@ def abs(x):
 print(abs(-7))
 print(abs(-7.16))
 print(abs(10))
+
+
+
+# 1. feladat: Készítsünk egy függvény ami megkap paraméterben 2 számot és visszaadja (return!) a 2 szám szorzatát
+
+def multiplication(a, b):
+    return a*b
+#a = int(input())
+#b = int(input())
+#print(multiplication(a, b))
+
+# 2. feladat: Készíts egy függvényt ami 1 poz. egész számot kap paraméterben és visszaadja a szám faktoriális értékét!     
+# 5! = 5 * 4 * 3 * 2 * 1
+# 3! = 3 * 2 * 1
+
+def fakt(n):
+    szorzat = 1
+    for i in range(2, n + 1):
+        szorzat *= i
+    return szorzat
+
+print(fakt(5))
+print(fakt(3))
+print(fakt(15))
+
+# 3. feladat: Írj egy függvényt ami megkap egy számot paraméterben és annyiszor kiírja, hogy "Hello Világ!"
+
+def hello_n_world(n):
+    for i in range(n):
+        print("Hello Világ!")
+        
+hello_n_world(5)
+
+
+
+
