@@ -121,3 +121,12 @@ print(power(2, 0))
 print(power(0, 4))
 print(power(0, 0))
 
+# Egy rekurzív függvényt írjunk, ami meghatározza egy lista összegét
+
+def rek_sum(lista):
+    if len(lista) == 0:
+        return 0
+    return lista[0] + rek_sum(lista[1:])
+
+print(rek_sum([5,8,3,1,5,8,5,3,1,5]))
+
