@@ -64,3 +64,42 @@ def c(n):
 for i in range(1, 11):
     print(f"c({i}) = {c(i)}")
 
+# d(n) = 8 + 2 * d(n-1)
+# d(1) = -3
+
+def d(n):
+    if n == 1:
+        return -3
+    return 8 + 2*d(n-1)
+
+print([d(i) for i in range(1, 11)])
+
+# e(n) = e(n-1) * e(n-1) = e(n-1)^2
+# e(1) = 2
+# 2, 4, 16, 256, ...
+def e(n):
+    if n == 1:
+        return 2
+    return e(n-1)**2
+
+print(e(10))
+
+# fib(n) = fib(n-1) + fib(n-2)
+# fib(1) = fib(2) = 1
+# 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+
+from functools import cache
+
+@cache
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    return fib(n-1) + fib(n-2)
+
+i = 1
+while True:
+    print(f"fib({i}) digit count = {len(str(fib(i)))}")
+    i += 1
+    if i > 20000:
+        break
+
