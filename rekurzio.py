@@ -100,6 +100,24 @@ i = 1
 while True:
     print(f"fib({i}) digit count = {len(str(fib(i)))}")
     i += 1
-    if i > 20000:
+    if i > 20:
         break
+
+# Készítsünk egy rekurzív hatványozó függvényt!
+# power(2, 10) = 1024
+# 2^5 = 2 * 2^4
+
+def power(a, b):
+    if a == 0 and b == 0: # 0^0 -> UNDEFINED
+        return "ERROR"
+    if b == 0:
+        return 1
+    if a == 0:
+        return 0
+    return a * power(a, b-1)
+
+print(power(2, 10))
+print(power(2, 0))
+print(power(0, 4))
+print(power(0, 0))
 
