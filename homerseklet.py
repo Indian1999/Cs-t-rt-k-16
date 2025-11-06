@@ -37,6 +37,40 @@ for i in range(len(homerseklet)):
 #       Min: 18
 #       Max: 35
 
+napok_nevei = ["Hétfői", "Keddi", "Szerdai", "Csütörtöki", "Pénteki", "Szombati", "Vasárnapi"]
 for j in range(len(homerseklet[0])):
+    összeg = 0
+    min_index = 0
+    max_index = 0
     for i in range(len(homerseklet)):
-        pass
+        összeg += homerseklet[i][j]
+        if homerseklet[i][j] < homerseklet[min_index][j]:
+            min_index = i
+        if homerseklet[i][j] > homerseklet[max_index][j]:
+            max_index = i
+    print(f"{napok_nevei[j]} napok adatai:")
+    print(f"\tÁtlag hőmérséklet: {round(összeg/len(homerseklet), 1)} °C")
+    print(f"\tLegmagasabb hőmérséklet: {homerseklet[max_index][j]} °C")
+    print(f"\tLegalacsonyabb hőmérséklet: {homerseklet[min_index][j]} °C")
+
+# 4. feladat: Melyik volt a legátlagosabb hét?
+# (az a hét ami átlag hőmérséklete a legközelebb van az éves heti átlag hőmérséklettől)
+from math import fabs
+
+heti_atlagok = []
+for i in range(len(homerseklet)):
+    heti_atlagok.append(sum(homerseklet[i]) / len(homerseklet[i]))
+
+total_atlag = sum(heti_atlagok) / len(heti_atlagok)
+        
+print(f"Az évi heti szintű átlag hőmérséklet: {total_atlag} °C")
+atlag_index = 0
+min_különbség = fabs(heti_atlagok[0] - total_atlag)
+for i in range(1, len(heti_atlagok)):
+    különbség = fabs(heti_atlagok[i] - total_atlag)
+    if különbség < min_különbség:
+        min_különbség = különbség
+        atlag_index = i
+
+print(f"A(z) {atlag_index + 1}. hét volt a legátlagosabb. A heti átlag {heti_atlagok[atlag_index]} °C volt.")
+
