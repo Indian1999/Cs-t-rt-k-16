@@ -1,0 +1,1 @@
+print("LogiLib sikeresen imoprtálva!")
