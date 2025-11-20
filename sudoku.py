@@ -10,8 +10,46 @@ board = [
         [0, 4, 9, 2, 0, 6, 0, 0, 7]
     ]
 
+def find_empty(board):
+    """Visszaadja az első üres cella koordinátáit"""
+    for i in range(len(board)):
+        for j in range(len(board[i])):
+            if board[i][j] == 0:
+                return i, j
+    return None
+    
+def valid(board, num, row, col):
+    """Ha egy sorban, oszlopban vagy kis négyzetben szerepel már a num, akkor 
+    False értékkel tér vissza, különben True"""
+    for j in range(len(board[row])):
+        if board[row][j] == num:
+            return False
+    
+    for i in range(len(board)):
+        if board[i][col] == num:
+            return False
+        
+    box_row = row // 3 * 3
+    box_col = col // 3 * 3
+    for i in range(box_row, box_row + 3):
+        for j in range(box_col, box_col + 3):
+            if board[i][j] == num:
+                return False
+    
+    return True
+
 def solve(board):
-    pass
+    empty = find_empty(board)
+    if empty == None:
+        return True
+    row, col = empty    # row, col = (0, 2)   -> row = 0,  col = 2
+    for num in range(1, 10):
+        if valid(board, num, row, col):
+            board[row][col] = num
+            if solve(board):
+                return True
+            board[row][col] = 0
+    return False
 
 def print_board(board):
     for i in range(len(board)):
