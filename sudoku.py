@@ -1,3 +1,4 @@
+import tkinter as tk
 board = [
         [7, 8, 0, 4, 0, 0, 1, 2, 0],
         [6, 0, 0, 0, 7, 5, 0, 0, 9],
@@ -62,7 +63,30 @@ def print_board(board):
         print("■")
     print("■ " * 13)
 
-print_board(board)
-solve(board)
-print()
-print_board(board)
+def draw_board(root, cells):
+    for i in range(9):
+        for j in range(9):
+            entry = tk.Entry(root, width=3, justify="center")
+            entry.grid(row=i, column=j, padx=5, pady=5)
+            if board[i][j] != 0:
+                entry.insert(0, board[i][j])        
+            cells[i][j] = entry
+
+
+root = tk.Tk()
+root.title("Sudoku Solver")
+
+cells = [[None for j in range(9)] for i in range(9)]
+
+def solve_and_show():
+    solve(board)
+    for i in range(9):
+        for j in range(9):
+            cells[i][j].delete(0, tk.END)
+            cells[i][j].insert(0, board[i][j])
+
+draw_board(root, cells)
+solve_button = tk.Button(root, text="Solve", command=solve_and_show)
+solve_button.grid(row=9, column=0, columnspan=9, pady=10)
+
+root.mainloop()
