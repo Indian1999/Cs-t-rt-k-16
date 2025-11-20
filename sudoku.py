@@ -9,3 +9,22 @@ board = [
         [1, 2, 0, 0, 0, 7, 4, 0, 0],
         [0, 4, 9, 2, 0, 6, 0, 0, 7]
     ]
+
+def solve(board):
+    pass
+
+def print_board(board):
+    for i in range(len(board)):
+        if i % 3 == 0:
+            print("■ " * 13)
+        for j in range(len(board[i])):
+            if j % 3 == 0:
+                print("■", end = " ")
+            print(board[i][j], end=" ")
+        print("■")
+    print("■ " * 13)
+
+print_board(board)
+solve(board)
+print()
+print_board(board)
