@@ -80,7 +80,7 @@ def on_end_of_turn():
 
 while gandalf.health > 0 and khadgar.health > 0:
     x_attack_y(gandalf, khadgar)
-    x_attack_y(khadgar, gandalf, True)
+    x_attack_y(khadgar, gandalf)
     on_end_of_turn()
 
 if gandalf.health <= 0:
