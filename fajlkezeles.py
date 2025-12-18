@@ -20,3 +20,11 @@ with open("homerseklet.txt", "r", encoding="utf-8") as f:
         szamok = [int(item) for item in line]
         print(szamok) # [14, 33, -3, -5, -5, 9, 14]
         homersekletek.append(szamok)
+
+
+# Feladat: Olvassuk be a pontok.txt fájl tartalmát és tároljuk el egy megfelelő adatszerkezetben.
+# Két 3D pont távolsága: ((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2) ** 0.5
+
+# a, Írjuk ki azt a pontot amelyik a legközelebb van az origóhoz
+
+# b, Írjuk ki az egymástól legtávolabb lévő 2 pontot (***)
