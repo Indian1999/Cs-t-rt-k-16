@@ -25,21 +25,21 @@ class Game:
         self.load_assets()
 
     def handle_movement(self, keys_pressed):
-        if keys_pressed[pygame.K_w]:
+        if keys_pressed[pygame.K_w] and self.red.rect.y > 0:
             self.red.move(0, -5)
-        if keys_pressed[pygame.K_s]:
+        if keys_pressed[pygame.K_s] and self.red.rect.y < self.HEIGHT - self.SPACESHIP_HEIGHT:
             self.red.move(0, 5)
-        if keys_pressed[pygame.K_d]:
+        if keys_pressed[pygame.K_d] and self.red.rect.x < self.WIDTH // 2 - self.SPACESHIP_WIDTH:
             self.red.move(5, 0)
-        if keys_pressed[pygame.K_a]:
+        if keys_pressed[pygame.K_a] and self.red.rect.x > 0:
             self.red.move(-5, 0)
-        if keys_pressed[pygame.K_UP]:
+        if keys_pressed[pygame.K_UP] and self.yellow.rect.y > 0:
             self.yellow.move(0, -5)
-        if keys_pressed[pygame.K_DOWN]:
+        if keys_pressed[pygame.K_DOWN] and self.yellow.rect.y < self.HEIGHT - self.SPACESHIP_HEIGHT:
             self.yellow.move(0, 5)
-        if keys_pressed[pygame.K_RIGHT]:
+        if keys_pressed[pygame.K_RIGHT] and self.yellow.rect.x < self.WIDTH - self.SPACESHIP_WIDTH:
             self.yellow.move(5, 0)
-        if keys_pressed[pygame.K_LEFT]:
+        if keys_pressed[pygame.K_LEFT] and self.yellow.rect.x > self.WIDTH // 2:
             self.yellow.move(-5, 0)
     
     def load_assets(self):
