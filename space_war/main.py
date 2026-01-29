@@ -19,7 +19,7 @@ class Player:
         self.dire = dire
         self.rect = pygame.Rect(pos[0], pos[1], size[0], size[1])
         self.color = color
-        self.health = 10
+        self.health = 1
         self.max_bullets = 3
         self.bullets = []
 
@@ -130,7 +130,13 @@ class Game:
         pygame.display.update()
 
     def draw_winner(self, text):
-        pass
+        winner_font = pygame.font.SysFont("Arial", self.WIDTH // 10)
+        winner_surface = winner_font.render(text, True, (255,255,255))
+        self.window.blit(winner_surface, 
+                         (self.WIDTH//2 - winner_surface.get_width() // 2, 
+                          self.HEIGHT//2 - winner_surface.get_height() // 2))
+        pygame.display.update()
+        pygame.time.delay(5000)
     
     def run(self):
         self.window = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
