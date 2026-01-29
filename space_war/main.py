@@ -2,6 +2,45 @@ import pygame # pip install pygame (terminálban)
 import random
 import os
 pygame.font.init()
+pygame.mixer.init()
+
+class Meteor:
+    def __init__(self, window, surf, size):
+        self.window = window
+        self.image = surf
+        self.rect = pygame.Rect(0, 0, size, size)
+        self.x = 0
+        self.y = 0
+        self.setup()
+
+    def setup(self):
+        area = random.randint(1, 4)
+        if area == 1:
+            self.x = random.randint(-200, self.window.get_width() + 200)
+            self.y = random.randint(-150, -50)
+        elif area == 2:
+            self.x = random.randint(-200, self.window.get_width() + 200)
+            self.y = self.window.get_height() + random.randint(50, 150)
+        elif area == 3:
+            self.x = random.randint(-200, -50)
+            self.y = random.randint(0, self.window.get_height())
+        else:
+            self.x = self.window.get_width() + random.randint(50, 200)
+            self.y = random.randint(0, self.window.get_height())
+        self.rect.x = self.x
+        self.rect.y = self.y
+        goal_x = random.randint(50, self.window.get_width() - 50)
+        goal_y = random.randint(50, self.window.get_height() - 50)
+        distance = ((self.x - goal_x) ** 2 + (self.y - goal_y)**2) ** 0.5
+        self.dire = ((goal_x - self.x)/distance, (goal_y - self.y)/distance)
+
+    def move(self, velocity):
+        self.x += velocity * self.dire[0]
+        self.y += velocity * self.dire[1]
+        self.rect.x = self.x
+        self.rect.y = self.y
+        if self.x > self.window.get_width() + 200 or self.x < -200 or self.y < -200 or self.y > self.window.get_height()+200:
+            self.setup()
 
 class Bullet:
     def __init__(self, pos, dire, color):
@@ -13,18 +52,21 @@ class Bullet:
         self.rect.x += velocity * self.dire
 
 class Player:
-    def __init__(self, pos, size, surf, dire, color):
+    def __init__(self, pos, size, surf, dire, color, shoot_sound, damage_sound):
         self.image = pygame.transform.scale(surf, (size[0], size[1]))
         self.image = pygame.transform.rotate(self.image, -dire*90)
         self.dire = dire
         self.rect = pygame.Rect(pos[0], pos[1], size[0], size[1])
         self.color = color
-        self.health = 1
+        self.health = 10
         self.max_bullets = 3
         self.bullets = []
+        self.shoot_sound = shoot_sound
+        self.damage_sound = damage_sound
 
     def take_damage(self):
         self.health -= 1
+        self.damage_sound.play()
 
     def move(self, x, y):
         self.rect.x += x
@@ -33,6 +75,7 @@ class Player:
     def shoot(self):
         if len(self.bullets) >= self.max_bullets:
             return
+        self.shoot_sound.play()
         if self.dire == 1:
             start_x = self.rect.x + self.rect.width
         else:
@@ -47,6 +90,7 @@ class Game:
         self.HEIGHT = 500
         self.SPACESHIP_WIDTH = self.WIDTH // 11
         self.SPACESHIP_HEIGHT = self.HEIGHT // 7
+        self.METEOR_SIZE = self.WIDTH // 18
         self.FPS = 60
         self.ASSETS = os.path.join(os.path.dirname(__file__), "assets")
         self.load_assets()
@@ -84,6 +128,9 @@ class Game:
             if bullet.rect.colliderect(self.red.rect):
                 self.red.take_damage()
                 self.yellow.bullets.remove(bullet)
+        
+        for meteor in self.meteors:
+            meteor.move(6)
     
     def load_assets(self):
         self.BACKGROUND = pygame.image.load(os.path.join(self.ASSETS, "space.png"))
@@ -91,6 +138,13 @@ class Game:
         
         self.RED_SPACESHIP = pygame.image.load(os.path.join(self.ASSETS, "spaceship_red.png"))
         self.YELLOW_SPACESHIP = pygame.image.load(os.path.join(self.ASSETS, "spaceship_yellow.png"))
+
+        self.METEOR = pygame.image.load(os.path.join(self.ASSETS, "meteor.png"))
+
+        self.EXPLOSION = pygame.mixer.Sound(os.path.join(self.ASSETS, "explosion.wav"))
+        self.EXPLOSION.set_volume(0.3)
+        self.LASER = pygame.mixer.Sound(os.path.join(self.ASSETS, "laser.wav"))
+        self.LASER.set_volume(0.3)
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -120,6 +174,10 @@ class Game:
         for bullet in self.red.bullets + self.yellow.bullets:
             pygame.draw.rect(self.window, bullet.color, bullet.rect)
 
+        # Meteorok
+        for meteor in self.meteors:
+            self.window.blit(meteor.image, meteor.rect)
+
         # UI elemek:
         health_font = pygame.font.SysFont("Arial", self.WIDTH // 25)
         red_health_text = health_font.render(f"Health: {self.red.health}", True, (255,255,255))
@@ -144,12 +202,16 @@ class Game:
 
         self.red = Player(pos=(50, self.HEIGHT//2 - self.SPACESHIP_HEIGHT//2),
                           size=(self.SPACESHIP_WIDTH, self.SPACESHIP_HEIGHT),
-                          surf=self.RED_SPACESHIP, dire = 1, color = (255, 0, 0))
+                          surf=self.RED_SPACESHIP, dire = 1, color = (255, 0, 0),
+                          shoot_sound=self.LASER, damage_sound=self.EXPLOSION)
         
         
         self.yellow = Player(pos=(self.WIDTH - 50 - self.SPACESHIP_WIDTH, self.HEIGHT//2 - self.SPACESHIP_HEIGHT//2),
                           size=(self.SPACESHIP_WIDTH, self.SPACESHIP_HEIGHT),
-                          surf=self.YELLOW_SPACESHIP, dire = -1, color = (255, 255, 0))
+                          surf=self.YELLOW_SPACESHIP, dire = -1, color = (255, 255, 0),
+                          shoot_sound=self.LASER, damage_sound=self.EXPLOSION)
+        
+        self.meteors = [Meteor(self.window, self.METEOR, self.METEOR_SIZE) for i in range(3)]
 
         self.clock = pygame.time.Clock()
         self.gameOn = True
