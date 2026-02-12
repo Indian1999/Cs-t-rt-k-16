@@ -1,89 +1,10 @@
-import pygame # pip install pygame (terminálban)
-import random
+import pygame
 import os
+from .player import Player
+from .meteor import Meteor
 pygame.font.init()
 pygame.mixer.init()
 
-class Meteor:
-    def __init__(self, window, surf, size):
-        self.window = window
-        self.image = surf
-        self.rect = pygame.Rect(0, 0, size, size)
-        self.x = 0
-        self.y = 0
-        self.setup()
-
-    def setup(self):
-        area = random.randint(1, 4)
-        if area == 1:
-            self.x = random.randint(-200, self.window.get_width() + 200)
-            self.y = random.randint(-150, -50)
-        elif area == 2:
-            self.x = random.randint(-200, self.window.get_width() + 200)
-            self.y = self.window.get_height() + random.randint(50, 150)
-        elif area == 3:
-            self.x = random.randint(-200, -50)
-            self.y = random.randint(0, self.window.get_height())
-        else:
-            self.x = self.window.get_width() + random.randint(50, 200)
-            self.y = random.randint(0, self.window.get_height())
-        self.rect.x = self.x
-        self.rect.y = self.y
-        goal_x = random.randint(50, self.window.get_width() - 50)
-        goal_y = random.randint(50, self.window.get_height() - 50)
-        distance = ((self.x - goal_x) ** 2 + (self.y - goal_y)**2) ** 0.5
-        self.dire = ((goal_x - self.x)/distance, (goal_y - self.y)/distance)
-
-    def move(self, velocity):
-        self.x += velocity * self.dire[0]
-        self.y += velocity * self.dire[1]
-        self.rect.x = self.x
-        self.rect.y = self.y
-        if self.x > self.window.get_width() + 200 or self.x < -200 or self.y < -200 or self.y > self.window.get_height()+200:
-            self.setup()
-
-class Bullet:
-    def __init__(self, pos, dire, color):
-        self.rect = pygame.Rect(pos[0], pos[1]-2, 10, 4)
-        self.dire = dire
-        self.color = color
-
-    def move(self, velocity):
-        self.rect.x += velocity * self.dire
-
-class Player:
-    def __init__(self, pos, size, surf, dire, color, shoot_sound, damage_sound):
-        self.image = pygame.transform.scale(surf, (size[0], size[1]))
-        self.image = pygame.transform.rotate(self.image, -dire*90)
-        self.dire = dire
-        self.rect = pygame.Rect(pos[0], pos[1], size[0], size[1])
-        self.color = color
-        self.health = 10
-        self.max_bullets = 3
-        self.bullets = []
-        self.shoot_sound = shoot_sound
-        self.damage_sound = damage_sound
-
-    def take_damage(self):
-        self.health -= 1
-        self.damage_sound.play()
-
-    def move(self, x, y):
-        self.rect.x += x
-        self.rect.y += y
-
-    def shoot(self):
-        if len(self.bullets) >= self.max_bullets:
-            return
-        self.shoot_sound.play()
-        if self.dire == 1:
-            start_x = self.rect.x + self.rect.width
-        else:
-            start_x = self.rect.x - 10
-        start_y = self.rect.y + self.rect.height // 2
-        self.bullets.append(Bullet((start_x, start_y), self.dire, self.color))
-
-        
 class Game:
     def __init__(self):
         self.WIDTH = 900
@@ -130,7 +51,13 @@ class Game:
                 self.yellow.bullets.remove(bullet)
         
         for meteor in self.meteors:
-            meteor.move(6)
+            meteor.move()
+            if meteor.rect.colliderect(self.red.rect):
+                self.red.take_damage()
+                meteor.setup()
+            if meteor.rect.colliderect(self.yellow.rect):
+                self.yellow.take_damage()
+                meteor.setup()
     
     def load_assets(self):
         self.BACKGROUND = pygame.image.load(os.path.join(self.ASSETS, "space.png"))
@@ -229,6 +156,3 @@ class Game:
             if self.yellow.health <= 0:
                 self.draw_winner("Red Wins!")
                 self.gameOn = False
-
-game = Game()
-game.run()
