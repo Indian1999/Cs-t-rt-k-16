@@ -1,7 +1,7 @@
 import os
 import random
 # A dictionary (szótár) adatszerkezet
-
+"""
 szotar = {} # Egy üres dictionaryt hoz létre
 szotar = {
     "alma": "apple",
@@ -36,7 +36,7 @@ print(szotar)
 # Elem törlése:
 del szotar["flakon"]
 print(szotar)
-
+"""
 ###############################
 #    DICTIONARY-K BEJÁRÁSA    #
 ###############################
@@ -59,7 +59,7 @@ def opcio3(dict):
 
     for key, value in dict.items(): # key = 'alma', value = 'apple'
         print(f"{key} -> {value}")
-
+"""
 #opcio1(szotar)
 #opcio2(szotar)
 opcio3(szotar)
@@ -73,3 +73,8 @@ if "citrom" in szotar.keys():
     print("Szerepel a citrom a szótárban")
 else:
     print("Nem szerepel a citrom a szótárban")
+
+"""
+
+# Feladat: Adott egy txt állomány, olvassuk be és számoljuk meg, hogy melyik hányszor szerepel
+
