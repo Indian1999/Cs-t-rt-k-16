@@ -113,3 +113,32 @@ for key, value in word_counter.items():
     if i >= 15:
         break
 
+################################
+#      PLAYERS FELADAT         #
+################################
+
+players = []
+for i in range(10):
+    players.append(
+        {
+            "level": random.randint(1, 80),
+            "class": random.choice(["Warrior", "Mage", "Priest", "Paladin"]),
+            "gold": random.randint(100, 24000),
+            "kill_count": random.randint(0, 200)
+        }
+    )
+
+# Írd ki a leggazdagabb játékos adatait!
+max_index = 0
+for i in range(1, len(players)):
+    if players[i]["gold"] > players[max_index]["gold"]:
+        max_index = i
+
+print(players[max_index])
+
+# Írd ki a játékosok átlagos killcountját:
+
+total = 0
+for player in players:
+    total += player["kill_count"]
+print(f"A játékosok átlagoss kill count-ja:", round(total/len(players) ,1))
