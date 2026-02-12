@@ -78,3 +78,38 @@ else:
 
 # Feladat: Adott egy txt állomány, olvassuk be és számoljuk meg, hogy melyik hányszor szerepel
 
+path = os.path.join(os.path.dirname(__file__), "forras", "story.txt")
+
+with open(path, encoding="utf-8") as f:
+    text = f.read()
+    text = text.replace(".", "")
+    text = text.replace(",", "")
+    text = text.replace("?", "")
+    text = text.replace("!", "")
+    text = text.replace('"', "")
+    text = text.replace("'re", " are")
+    text = text.replace("'ve", " have")
+    text = text.replace("'s", "")
+    text = text.replace("\n", " ")
+    text = text.replace("  ", " ")
+    text = text.lower()
+    text = text.split(" ")
+
+word_counter = {}
+for word in text:
+    if word not in word_counter.keys():
+        word_counter[word] = 1
+    else:
+        word_counter[word] += 1
+
+word_counter = list(word_counter.items()) # [('the', 143), ('morning', 3), ('sun', 1)]
+# x, a word_counter egy eleme, azaz pl.: x = ('the', 143)
+word_counter.sort(key=lambda x: x[1], reverse=True)
+word_counter = dict(word_counter)
+i = 0
+for key, value in word_counter.items():
+    i += 1
+    print(f"{key} -> {value}")
+    if i >= 15:
+        break
+
