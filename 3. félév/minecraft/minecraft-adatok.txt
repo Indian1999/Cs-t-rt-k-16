@@ -1,0 +1,13 @@
+nev;mod;jatekosok;havi_dij
+MagyarCraft;survival;320;1200
+BlockWorld;survival;185;1500
+SkyBlock Pro;skyblock;290;2000
+PixelMine;survival;210;1800
+CraftLand;survival;450;1000
+HungaroCraft;creative;95;800
+RedstoneWorld;creative;120;2500
+DiamondRush;survival;380;1400
+SkyWars HU;skywars;275;1600
+BuildMaster;creative;88;900
+MiniGames Plus;minigames;195;1100
+BedWars király;bedwars;340;1300

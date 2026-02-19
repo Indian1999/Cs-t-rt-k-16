@@ -1,0 +1,11 @@
+nev;telepules;szerviz_ar
+Bicikli Pont;Budapest;4500
+Kerék Világ;Budapest;5200
+Pedál Mester;Debrecen;3800
+Kerék Expressz;Budapest;5500
+Bicaj Szerviz;Szeged;4200
+Prémium Bike;Győr;8500
+Pedál Centrum;Budapest;6000
+Kétkerekű Bolt;Pécs;3500
+Sport Kerékpár;Miskolc;4800
+Bringás Sarok;Eger;4000
