@@ -119,4 +119,18 @@ except ZeroDivisionError as ex:
 except TypeError as ex:
     print(ex)
 
+class CicaError(Exception):
+    def __init__(self, text):
+        super().__init__(text)
+
+def animal_name(string):
+    if string not in ["Cirmos", "Cirmi", "Cicus"]:
+        raise CicaError("Ez nem egy cicus neve!")
+    
+try:
+    #animal_name("Bodri")
+    animal_name("Cirmos")
+except CicaError as ex:
+    print(ex)
+
 
