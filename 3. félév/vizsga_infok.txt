@@ -1,0 +1,64 @@
+Vizsga júniusban, külön kell majd jelentkezni weboldalon keresztül.
+
+35 kérdés, 60 perc áll rendelkezésre
+
+Kérdés típusok:
+felelet választósak ( 4 ből 1 helyes)
+Több helyes válasz
+Kódkiegészítés
+Drag and Drop (Párosítgatás, stb.)
+
+Ha minimum 51%, akkor megvan a Vizsga
+
+A Logiscoolos vizgsa a Python Institute PCEP vizsgáján alapszik
+(A PCEP 75% a minimum)
+
+Témakörök:
+
+1. Alap koncepciók (5 kérdés):
+    Literálok: egész, float számok, stringek, logikai
+    Kommentek, print, input
+    aritmetikai operátorok (+, -, *, %, //, stb.)
+    operátorok stringekre (+, *)
+    Értékadó operátorok (=, +=, *=, //=, stb.)
+    Kulcsszavak (kékkel ki van emelve)
+    Indentálás (tabolás)
+    Python alap tulajdonságai
+    Interpreter/Compiler
+
+2. Típusok, kiértékelés (6 kérdés):
+    int, float, string, bool
+    logikai operátorok (andm, or, not)
+    logikai kifejezések
+    Relációs operátorok (>, <, <=, ==, >=, !=)
+    print formázás (f"", end="", sep="")
+    string kezelő függvények (lower(), title(), count(), replace() stb...)
+    escape karekter '\' -> (\n, \t, \\)
+    Bit szintű operátorok (&, |, ^, ~, >>, <<)
+    Float-ok pontossága
+
+3. Vezérlési elemek (6 kérdés):
+    ciklusok
+    elágazások
+    ezek egymásba ágyazása
+    Ciklusok else ága
+    Ciklusvezérlők (break, continue)
+    Pass
+
+4. Adatszerkezetek (7 kérdés):
+    lista, tuple, set, dictionary
+    append(), sort(), sorted(), len(), insert(), stb.
+    mátrix (listák listája)
+    slicingolós indexelés ( lista[3:87:2])
+
+5. Függvények, kivételkezelés ( 6 kérdés ):
+    def, return, yield, raise
+    rekurzív függvények
+    függvények paraméterei/argumentumai
+    pozícionális/kulcsszavas paraméter
+    try-except-finally, TypeError, ValueError, stb.
+
+6. Egyéb témakörök: (Egy-egy kérdésben felbukkanhatnak [Csak a Logiscoolos vizsgán])
+    fájlkezelés, txt, csv fájlok
+    libraryk, modulok (random, math, numpy, pandas, matplotlib, pygame)
+    
