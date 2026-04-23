@@ -84,3 +84,33 @@ for i in range(len(lista)):
 print(lista)
 print(f"A szám ami csak egyszer szerepel: {szam}")
 
+
+
+# Linuxon a chmod parancs használata:
+# 1 olvasás, 2 írás, 4 futtatás
+# chmod 777 fajl
+# chmod 644 fajl
+
+def set_permission(num):
+    permissions = []
+    if num & 1 == 1:
+        permissions.append("olvasás")
+    if num & 2 == 2:
+        permissions.append("írás")
+    if num & 4 == 4:
+        permissions.append("futtatás")
+    return permissions
+
+for i in range(8):
+    print(f"{i}: {set_permission(i)}")
+
+# % operátor nélkül ellenőrizzük, hogy egy szám páros, vagy páratlan
+
+def is_even(num):
+    if num & 1:
+        print("Páratlan")
+    else:
+        print("Páros")
+
+is_even(8)
+is_even(11)
