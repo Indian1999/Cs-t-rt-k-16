@@ -1,0 +1,212 @@
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+15
+Nem talált! A gondolt szám: 20. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+65
+Nem talált! A gondolt szám: 95. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+32
+Nem talált! A gondolt szám: 28. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+45
+Nem talált! A gondolt szám: 27. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 94. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 89. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+3
+Nem talált! A gondolt szám: 17. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+1
+Nem talált! A gondolt szám: 65. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 47. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 71. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+56
+Nem talált! A gondolt szám: 64. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 47. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+454
+Nem talált! A gondolt szám: 62. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 90. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 58. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+3
+Nem talált! A gondolt szám: 82. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+1
+Nem talált! A gondolt szám: 4. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 68. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 23. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 51. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 52. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 79. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 73. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 18. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 67. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 84. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 83. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 42. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 48. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 44. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 38. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 78. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 23. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 1. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 53. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 8. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 96. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 92. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 9. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 4. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 97. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 44. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Eltaláltad!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 90. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 24. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+
+Kilépés!
+
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+2
+Nem talált! A gondolt szám: 61. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+6
+Nem talált! A gondolt szám: 87. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 41. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 35. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+9
+Nem talált! A gondolt szám: 57. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 75. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 66. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 6. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 47. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 2. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 67. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 24. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 50. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 54. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 75. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 73. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 13. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 70. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 79. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 87. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+4
+Nem talált! A gondolt szám: 42. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+5
+Nem talált! A gondolt szám: 56. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+6
+Nem talált! A gondolt szám: 87. Gondolok egy újat!
+Gondoltam egy számra, 1-100 között, találd ki! (Üres string kilépéshez)
+
+Kilépés!
+
