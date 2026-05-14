@@ -125,11 +125,55 @@ matrix = [
 ]
 
 # Mennyi a mátrix elemeinek összege?
-
+összeg = 0
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        összeg += matrix[i][j]
+print(f"A mátrix elemek összege: {összeg}")
 # Hanyadik sorban a legnagyobb az elemek átlaga?
+atlagok = []
+for i in range(len(matrix)):
+    sorösszeg = 0
+    for j in range(len(matrix[i])):
+        sorösszeg += matrix[i][j]
+    atlagok.append(sorösszeg/len(matrix[i]))
+
+max_index = 0
+for i in range(len(atlagok)):
+    if atlagok[i] > atlagok[max_index]:
+        max_index = i
+print(f"A legnagyobb átlagú sor: {max_index + 1} (átlag = {round(atlagok[max_index], 2)})")
 
 # Hány negatív szám van a mátrixban?
 
+szamlalo = 0
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] < 0:
+            szamlalo += 1
+print(f"A negatív számok száma: {szamlalo}")
+
 # Mennyi a páros számok összege?
 
+összeg = 0
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] & 1 == 0:
+            összeg += matrix[i][j]
+print(f"A páros elemek összege: {összeg}")
+
 # Hanyadik oszlopban van a legtöbb negatív szám?
+negativok = []
+for j in range(len(matrix[0])):
+    szamlalo = 0
+    for i in range(len(matrix)):
+        if matrix[i][j] < 0:
+            szamlalo += 1
+    negativok.append(szamlalo)
+
+
+max_index = 0
+for i in range(len(negativok)):
+    if negativok[i] > negativok[max_index]:
+        max_index = i
+print(f"A legnegagtívabb oszlop: {max_index + 1} (negatívok száma {negativok[max_index]})")
