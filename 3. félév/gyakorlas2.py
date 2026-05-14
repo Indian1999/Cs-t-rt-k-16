@@ -121,5 +121,15 @@ matrix = [
     [  3,   1,  38,   2,  35,  98,  34,  67],
     [ 23,  93,  -5,  83,  48,  58,   5,  38],
     [  0,  60,  27,  96,  70,  69, 100,  36],
-    [ 63,  14,  80,  -2,  -5,  74,  19,  88],
+    [ 63,  14,  80,  -2,  -5,  74,  19,  88]
 ]
+
+# Mennyi a mátrix elemeinek összege?
+
+# Hanyadik sorban a legnagyobb az elemek átlaga?
+
+# Hány negatív szám van a mátrixban?
+
+# Mennyi a páros számok összege?
+
+# Hanyadik oszlopban van a legtöbb negatív szám?
