@@ -106,10 +106,34 @@ print(permutations(["Anna", "Béla", "Cecil", "Dénes", "Elemér"]))
 # 1. feladat: Írjunk egy függvényt ami egy mátrixot listává alakít
 # pl.: [[1,2,3], [4,5,6], [4, 5], [3]] -> [1,2,3,4,5,6,4,5,3]
 
+def matrix_to_list(matrix):
+    lista = []
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            lista.append(matrix[i][j])
+    return lista
+
+print(matrix_to_list([[1,2,3], [4,5,6], [4, 5], [3]]))
+
 # 2. feladat: Írjunk egy string titkosító függvényt.
 # A páros indexű karakterek kerüljenek az új string elejére, a páratlanok a végére
 # pl.: "Hello World!" -> "HloWrdel wl!"
 
 # 3. feladat: Ítrjunk egy olyan függvényt, amely egy ilyen módon kódolt szöveget tud dekódolni!
 
-coded = "Pgrmoásaznkdéee  nmgayrla v ltáoatmgáan ylevő zrba.Ardkéa, oy tduo  eodliadkóntjul,etr ell réeni,hg yen oda íukr,ak iáts etü,ho étnka dkólát"
+def encode(text):
+    return text[::2] + text[1::2]
+
+print(encode("Egy almafa"))
+print(encode("A programozás órákon programozunk."))
+
+def decode(text):
+    halfway = len(text) // 2
+    output = ""
+    for i in range(halfway):
+        output += text[i]
+        output += text[halfway+i]
+    return output
+
+print(decode("Eyamfg laa"))
+print(decode("Apormzsóáo rgaouk rgaoá rknpormzn."))
