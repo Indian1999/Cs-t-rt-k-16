@@ -9,6 +9,7 @@ class Game:
     HEIGHT = 500
     FPS = 60
     FRICTION = 0.15 # Ennyi százalékkal csökentjük a gyorsulást
+    COIN_CHANCE = 0.3  # esély coin spawnolásra platform létrehozásakor
     ASSETS = os.path.join(os.path.dirname(__file__), "assets")
     BG_IMAGE = pygame.image.load(os.path.join(ASSETS, "background.png"))
     BG_IMAGE = pygame.transform.scale(BG_IMAGE, (WIDTH+40, HEIGHT+40))
@@ -41,6 +42,12 @@ class Game:
             p = Platform(False, self.platforms)
             self.platforms.add(p)
             self.all_sprites.add(p)
+            if random.random() < Game.COIN_CHANCE:
+                x = p.rect.x + p.surf.get_width() // 2
+                y = p.rect.y - 15
+                coin = Coin(x, y)
+                self.all_sprites.add(coin)
+                self.coins.add(coin)
 
     def move_platforms(self):
         if self.player.rect.top <= Game.HEIGHT // 3:
@@ -51,17 +58,26 @@ class Game:
                 if platform.rect.top >= Game.HEIGHT:
                     platform.kill()
                     self.score += 1
+            for coin in self.coins:
+                coin.rect.y += move_value
+                if coin.rect.top >= Game.HEIGHT:
+                    coin.kill()
 
     def check_death(self):
         if self.player.rect.top > Game.HEIGHT:
             pygame.quit()
             quit()
 
+    def check_coin(self):
+        hits = pygame.sprite.spritecollide(self.player, self.coins, dokill=True)
+        self.score += 7 * len(hits)
+
     def run(self):
         self.player = Player()
 
         self.all_sprites = pygame.sprite.Group()
         self.platforms = pygame.sprite.Group()
+        self.coins = pygame.sprite.Group()
         self.all_sprites.add(self.player)
 
         self.main_platform = Platform()
@@ -83,6 +99,7 @@ class Game:
             self.player.move(self.platforms)
             self.player.jump(self.platforms)
 
+            self.check_coin()
             self.check_death()
 
             self.draw_frame()
@@ -113,10 +130,10 @@ class Player(pygame.sprite.Sprite):
         self.acc.x -= self.vel.x * Game.FRICTION
         self.vel += self.acc
         self.pos += self.vel
-        if self.pos.x < 0:
+        if self.pos.x + self.surf.get_width() < 0:
             self.pos.x = Game.WIDTH
         if self.pos.x > Game.WIDTH:
-            self.pos.x = 0
+            self.pos.x =  -self.surf.get_width()
 
         hits = pygame.sprite.spritecollide(self, platforms, False)
         if hits:
@@ -135,8 +152,6 @@ class Player(pygame.sprite.Sprite):
             self.jumping = True
             self.vel.y = -22
 
-
-
 class Platform(pygame.sprite.Sprite):
     def __init__(self, base_platform = True, platforms = pygame.sprite.Group()):
         super().__init__()
@@ -150,7 +165,14 @@ class Platform(pygame.sprite.Sprite):
             while pygame.sprite.spritecollide(self, platforms, False):
                 pos = (random.randint(0, Game.WIDTH-20), random.randint(0, Game.HEIGHT-20))
                 self.rect = self.surf.get_rect(center=pos)
+            
 
+
+class Coin(pygame.sprite.Sprite):
+    def __init__(self, xpos, ypos):
+        super().__init__()
+        self.surf = pygame.transform.scale(Game.COIN_IMAGE, (30, 30))
+        self.rect = self.surf.get_rect(center=(xpos, ypos))
 
 game = Game()
 game.run()
